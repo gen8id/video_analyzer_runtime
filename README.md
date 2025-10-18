@@ -20,7 +20,7 @@
 ```bash
 video-analyzer/ # 사용자가 경로 임의 설정 가능 (workspace 등, github clone 한 디렉토리 또는 zip 파일 압축해제한 디렉토리)
 ├─ docker-compose.yml # 도커 컴포즈 설정 파일
-├─ docker-up.cmd # 컨테이너 이미지 다운로드, 분석 모델 다운로드 및 gradio 실행
+├─ docker-up.cmd # 최초 실행 명령. 컨테이너 이미지 다운로드, 분석 모델 다운로드 및 gradio 실행
 ├─ docker-start.cmd # 중단된 컨테이너 다시 시작
 ├─ docker-stop.cmd # 컨테이너 서비스 일시 중지
 ├─ docker-down.cmd # 서비스 컨테이너를 완전히 제거
