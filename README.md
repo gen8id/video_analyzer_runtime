@@ -30,7 +30,7 @@ video-analyzer/ # 사용자가 경로 임의 설정 가능 (workspace 등, githu
 ├─ outputs/ # 자동생성: 영상 분석 결과 텍스트 파일 저장 폴더
 └─ README.md # 애플리케이션 설치 안내 파일
 
-> `models`, `videos`, `outputs` 폴더는 호스트와 컨테이너 간 볼륨으로 자동 마운트됩니다.
+> `models`, `videos`, `outputs` 폴더는 호스트와 컨테이너 간 공유되는 디렉토리로, 자동으로 연동(볼륨 마운트)됩니다.
 
 ```
 
