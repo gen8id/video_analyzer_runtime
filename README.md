@@ -60,7 +60,7 @@ docker-start.cmd
 tail-logs.cmd
 ```
 
-## 7. 컨테이너 완전히 셧다운 및 이미지 언로드
+## 7. 컨테이너 셧다운 및 이미지 언로드
 ```
 docker-down.cmd
 ```
