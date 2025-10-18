@@ -20,11 +20,11 @@
 ```bash
 video-analyzer/ # 사용자가 경로 임의 설정 가능 (workspace 등, github clone 한 디렉토리 또는 zip 파일 압축해제한 디렉토리)
 ├─ docker-compose.yml # 도커 컴포즈 설정 파일
-├─ docker-up.cmd # 최초 실행 명령. 컨테이너 이미지 다운로드, 분석 모델 다운로드 및 gradio 실행
-├─ docker-start.cmd # 중단된 컨테이너 다시 시작
-├─ docker-stop.cmd # 컨테이너 서비스 일시 중지
-├─ docker-down.cmd # 서비스 컨테이너를 완전히 제거
+├─ docker-up.cmd # 최초 1회 실행 명령. 컨테이너 이미지 다운로드, 분석 모델 다운로드 및 gradio 실행
 ├─ tail-logs.cmd # 컨테이너 이미지 내부 로그 확인
+├─ docker-stop.cmd # 컨테이너 서비스 중지
+├─ docker-start.cmd # 중단 된 컨테이너 다시 시작
+├─ docker-down.cmd # 컨테이너 서비스 중지 후 이미지 언로드 (컨테이너 이미지 파일은 남아 있음)
 ├─ models/ # 자동생성: Vision Language 모델 캐시/다운로드 폴더
 ├─ videos/ # 자동생성: 업로드 된 비디오 저장 폴더
 ├─ outputs/ # 자동생성: 영상 분석 결과 텍스트 파일 저장 폴더
