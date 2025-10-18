@@ -1,0 +1,46 @@
+services:
+  video_analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aicompanion/video_analyzer:latest
+    container_name: video_analyzer
+
+    # GPU 설정
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    ports:
+      - "7860:7860"   # Gradio UI
+
+    # 볼륨 마운트 (호스트 ↔ 컨테이너)
+    volumes:
+      - ./models:/workspace/video_analyzer/models
+      - ./videos:/workspace/video_analyzer/videos
+      - ./outputs:/workspace/video_analyzer/outputs
+
+    environment:
+      # GPU 선택 (필요 시 GPU ID 지정)
+      # - CUDA_VISIBLE_DEVICES=0
+      - GRADIO_SHARE=1     # 필요 시 환경변수 기반 옵션도 사용 가능      
+      - HF_HOME=/workspace/video_analyzer/models
+      - HF_HUB_CACHE=/workspace/video_analyzer/models
+      - PYTHONUNBUFFERED=1
+      - TZ=Asia/Seoul
+      - OMP_NUM_THREADS=8
+      - MKL_NUM_THREADS=8
+      - TMPDIR=/dev/shm
+
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    shm_size: "24gb"
+
+    working_dir: /workspace/video_analyzer
+
+    command: ["python", "run-gradio.py"] 
