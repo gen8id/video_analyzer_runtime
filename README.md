@@ -38,9 +38,9 @@ video-analyzer/ # 사용자가 경로 임의 설정 가능 (workspace 등, githu
 
 ```cmd
 docker-up.cmd
-# docker-compose.yml의 제일 하단, command: ["python", "run-gradio.py", "--share"] 로 바꾸고,
-docker-down.cmd > docker-up.cmd 실행하면 gradio를 외부 공개모드인 live 모드로 실행
 ```
+docker-compose.yml의 제일 하단, command 부분을 ["python", "run-gradio.py", "--share"] 로 바꾸고 나서,
+docker-down.cmd > docker-up.cmd 실행하면 gradio를 외부 공개모드인 live 모드로 실행
 기본 포트: 7860
 
 - Gradio UI 접속: http://localhost:7860
